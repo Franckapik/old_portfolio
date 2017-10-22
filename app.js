@@ -7,6 +7,12 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var regarder = require('./routes/regarder');
+var ecouter = require('./routes/ecouter');
+var jouer = require('./routes/jouer');
+var programmer = require('./routes/programmer');
+var bidouiller = require('./routes/bidouiller');
+
 
 var app = express();
 
@@ -24,6 +30,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/regarder', regarder);
+app.use('/ecouter', ecouter);
+app.use('/jouer', jouer);
+app.use('/programmer', programmer);
+app.use('/bidouiller', bidouiller);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
